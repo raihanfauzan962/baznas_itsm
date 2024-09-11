@@ -1,0 +1,9 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+  <h1>User</h1>
+  <a href="{% url 'ticket_list' %}">Tickets</a>
+{% endblock content %}

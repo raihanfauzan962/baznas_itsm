@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket List</title>
+</head>
+<body>
+    <h1>Tickets</h1>
+    <a href="{% url 'create_ticket' %}">Create New Ticket</a>
+    <ul>
+        {% for ticket in tickets %}
+        <li>
+            <a href="{% url 'update_ticket' ticket.id %}">{{ ticket.title }}</a> - {{ ticket.type.name }} ({{ ticket.status.name }})
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
